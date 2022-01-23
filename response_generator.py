@@ -1,6 +1,6 @@
 from random import randint
 
-from flask import Flask, jsonify, render_template
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
