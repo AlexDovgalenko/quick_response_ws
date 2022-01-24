@@ -1,1 +1,1 @@
-web: gunicorn app:app
+web: gunicorn response_generator:app
