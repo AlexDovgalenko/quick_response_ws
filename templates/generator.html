@@ -16,40 +16,33 @@
         {
             color: #17f702;
             background-color: #042b08;
-            font-size: 35px;
+            display: flex;
+            font-size: 54px;
             justify-content: center;
             align-items: center;
-            text-align: center;
         }
-    .center{
-              display: inline-block;
+    .center-result{
+              display: flex;
+              flex-direction: column;
               justify-content: center;
               align-items: center;
               text-align: center;
               min-height: 75vh;
-
-    }
-
-    .result {
               font-weight: bold;
-              1px solid red;
+              margin: 2px;
+              margin-color: #ff7a0d;
               color: red;
-              vertical-align: middle;
-              display: inline-block;
     }
-
 
 </style>
 
   <body>
-    <div class="center">
     <div>
-        Случайное число в диапазоне от 100 до 200:
+        Случайное число в диапазоне от 100 до 200: <br>
     </div>
-    <div class="result">
+    &nbsp;
+    <div class="center-result">
         {{ digit }}
     </div>
-    </div>
-
   </body>
 </html>
