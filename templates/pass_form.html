@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Access Code Generator</title>
+    <title>Pass Code Validation</title>
 </head>
+
 <style>
     body {
         background: white }
@@ -32,37 +33,20 @@
       .c_container{
               align-items: center;
               text-align: center;}
+      .remark{
+      font-size: 15px;}
 
 </style>
 
-
-
-
+<body>
 <section>
-    <p>Процесс дешифровки запущен и займет некоторое время, ожидайте...
+    <div class="remark"><i>*Чтобы начать дешифровку вы должны ввести код доступа для прогдаммы-дешифровщика, без правильного кода дешифровка незозможна!</i></div>
     <hr>
-    <div class="c_container">
-        <span id="time" class="result"></span>
-    </div>
+    <div>Веедите код для старта дешифровки</div>
+        <form method="post" action="/validate_access_code">
+            <input type="text" name="pass-code">
+            <button type="submit">Начать дешифровку</button>
+        </form>
 </section>
-<script>
-function stringGenerator(length) {
-    let result           = '';
-    const characters       = '~!+_)({}:?><@#$%^&*1234567890abcdefgh';
-    const charactersLength = characters.length;
-
-    for (var i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-
-   return result;
-}
-
-const divContainer = document.querySelector('#time');
-
-setInterval(() => {
-  divContainer.innerHTML = stringGenerator(9)
-}, 300)
-</script>
-
+</body>
 </html>
