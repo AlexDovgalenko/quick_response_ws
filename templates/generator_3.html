@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-  <style>
+<style>
     body {
         background: white }
     section {
@@ -24,8 +24,7 @@
       color: red;
       vertical-align: middle;
       display: inline-block;
-      padding-left: 50px;
-      padding-right: 50px;
+      width: 300px;
       padding-top: 20px;
       padding-bottom: 20px;
 
@@ -33,13 +32,37 @@
       .c_container{
               align-items: center;
               text-align: center;}
-  </style>
 
-  <section>
-    <p>Случайное число в диапазоне от 100 до 200:
-      <hr>
-      <div class="c_container">
-            <p class = "result"> {{ digit }}
-      </div>
-  </section>
+</style>
+
+
+
+
+<section>
+    <p>Идет процесс дешифровки ...
+    <hr>
+    <div class="c_container">
+        <span id="time" class="result"></span>
+    </div>
+</section>
+<script>
+function stringGenerator(length) {
+    let result           = '';
+    const characters       = '~!+_)({}:?><@#$%^&*1234567890abcdefgh';
+    const charactersLength = characters.length;
+
+    for (var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+
+   return result;
+}
+
+const divContainer = document.querySelector('#time');
+
+setInterval(() => {
+  divContainer.innerHTML = stringGenerator(9)
+}, 300)
+</script>
+
 </html>

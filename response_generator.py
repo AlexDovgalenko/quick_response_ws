@@ -11,7 +11,7 @@ def generate_response():
     text_response = f"Случайное число в диапазоне от 100 до 200: {digit}"
     # return jsonify(str=text_response)
     # return render_template("generator.html", digit=digit)
-    return render_template("generator_2.html", digit=digit)
+    return render_template("generator_3.html", digit=digit)
 
 
 if __name__ == "__main__":
