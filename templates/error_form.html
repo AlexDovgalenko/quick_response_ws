@@ -51,17 +51,25 @@
      .c_container{
           align-items: center;
           text-align: center;
-
           }
+
      .outer_container{
      min-height: 350px;
      }
+     img{
+        max-width: 10%;
+        max-height: 10%;
+        display: inline-block; /* remove extra space below image */
+        text-align:top;
+        align-items: center;
+    }
+
 </style>
 
 <body>
 <section>
     <div class="outer_container">
-    <div >Вы ввели неверный код доступа для прогдаммы-дешифровщика, попробуйте еще раз.</div>
+        <img src="/static/images/warning.png" /><span>Вы ввели неверный код доступа для прогдаммы-дешифровщика, попробуйте еще раз.</span>
     <hr>
     <div class="c_container">
         <form method="post" action="/re-enter_access_code">
