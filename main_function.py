@@ -111,7 +111,7 @@ def validate_pass_code():
 
 @app.route("/re-enter_access_code", methods=["POST"])
 def re_enter_pass_code():
-    return redirect(url_for("generate_access_code", access_code=code_status.access_code))
+    return redirect(url_for("generate_access_code"))
 
 
 @app.route("/reset_defaults", methods=["GET"])
