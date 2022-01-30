@@ -8,7 +8,8 @@
     body {
         background: white }
     section {
-        background: #042b08;
+        background: linear-gradient(125deg, #0c5e14, #05450b 40%, #042b08);
+        font-family:'Roboto',sans-serif;
         font-size: 45px;
         color: #17f702;
         border-radius: 1em;
@@ -18,6 +19,7 @@
         left: 50%;
         margin-right: -50%;
         transform: translate(-50%, -50%) }
+
     .result {
       font-weight: bold;
       border: 2px solid #17f702;
@@ -27,42 +29,36 @@
       width: 600px;
       padding-top: 20px;
       padding-bottom: 20px;
-
       }
-      .c_container{
+
+    .c_container{
               align-items: center;
               text-align: center;}
+
+    .outer_container{
+     min-height: 350px;
+     }
+
+     .div_res{
+      vertical-align: middle;
+      display: inline-block;
+      width: 600px;
+      margin: 1.5rem 2rem 1.5rem 2rem;
+     }
 
 </style>
 
 
-
-
 <section>
-    <p>Процесс дешифровки запущен и займет некоторое время, ожидайте...
+    <div class=".outer_container">
+    <p>Процесс дешифровки успешно завершен...
     <hr>
     <div class="c_container">
-        <span id="time" class="result"></span>
+        <div class="div_res">
+            Ваш код:
+        </div>
+        <span class="result">{{ access_code }} </span>
+    </div>
     </div>
 </section>
-<script>
-function stringGenerator(length) {
-    let result           = '';
-    const characters       = '~!+_)({}:?><@#$%^&*1234567890abcdefgh';
-    const charactersLength = characters.length;
-
-    for (var i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-
-   return result;
-}
-
-const divContainer = document.querySelector('#time');
-
-setInterval(() => {
-  divContainer.innerHTML = stringGenerator(9)
-}, 300)
-</script>
-
 </html>

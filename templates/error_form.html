@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pass Code Validation</title>
+</head>
+
+<style>
+    body {
+        background: #c7c7c7 }
+    section {
+        background: linear-gradient(135deg, #bd190d 50%, #850e05, #6e0b03);
+        font-size: 45px;
+        font-family:'Roboto',sans-serif;
+        color: #dedede;
+        border-radius: 1em;
+        padding: 1em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%)
+        }
+
+    .button3{
+        display:inline-block;
+        padding:0.5em 1.8em;
+        margin: 1.5rem 2rem 1.5rem 2rem;
+        border-radius:2em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Roboto',sans-serif;
+        font-size: 45px;
+        color:#474747;
+        background-color:#999999;
+        text-align:center;
+        transition: all 0.2s;
+        border: 2px solid #474747;
+    }
+    .button3:hover{
+        color: #000000
+        background-color:#dbdbdb;
+    }
+    @media all and (max-width:30em){
+        .button3{
+        display:block;
+        margin:0.2em auto;
+        }
+    }
+
+     .c_container{
+          align-items: center;
+          text-align: center;
+
+          }
+     .outer_container{
+     min-height: 350px;
+     }
+</style>
+
+<body>
+<section>
+    <div class="outer_container">
+    <div >Вы ввели неверный код доступа для прогдаммы-дешифровщика, попробуйте еще раз.</div>
+    <hr>
+    <div class="c_container">
+        <form method="post" action="/re-enter_access_code">
+            <button type="submit" class="button3">Вести код повторно</button>
+        </form>
+    </div>
+    </div>
+</section>
+</body>
+</html>

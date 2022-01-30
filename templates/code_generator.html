@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Access Code Generator</title>
+</head>
+<style>
+    body {
+        background: white }
+
+    section {
+        background: linear-gradient(125deg, #0c5e14, #05450b 40%, #042b08);
+        font-size: 45px;
+        font-family:'Roboto',sans-serif;
+        color: #17f702;
+        border-radius: 1em;
+        padding: 1em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%) }
+
+    .result {
+      font-weight: bold;
+      border: 2px solid #17f702;
+      font-family:'Roboto',sans-serif;
+      color: red;
+      vertical-align: middle;
+      display: inline-block;
+      width: 600px;
+      padding: 0.4rem 0.8rem 0.4rem 0.8rem;
+      margin:  3rem 1.5rem 3rem 1.5rem;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background:#032606;
+      }
+
+      .c_container{
+              align-items: center;
+              text-align: center;}
+
+     .outer_container{
+     min-height: 350px;
+     }
+
+</style>
+
+
+
+
+<section>
+    <div class="outer_container">
+    <p>Процесс дешифровки запущен и займет некоторое время, ожидайте...
+    <hr>
+    <div class="c_container">
+        <span id="time" class="result"></span>
+    </div>
+    </div>
+</section>
+<script>
+function stringGenerator(length) {
+    let result           = '';
+    const characters       = '~!+_)({}:?><@#$%^&*1234567890abcdefgh';
+    const charactersLength = characters.length;
+
+    for (var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+
+   return result;
+}
+
+const divContainer = document.querySelector('#time');
+
+setInterval(() => {
+  divContainer.innerHTML = stringGenerator(9)
+}, 300)
+</script>
+
+</html>

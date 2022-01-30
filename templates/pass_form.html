@@ -7,46 +7,89 @@
 
 <style>
     body {
-        background: white }
+        background: #c7c7c7 }
     section {
-        background: #042b08;
+        background: linear-gradient(125deg, #0c5e14, #05450b 40%, #042b08);
         font-size: 45px;
         color: #17f702;
         border-radius: 1em;
         padding: 1em;
         position: absolute;
+        font-family:'Roboto',sans-serif;
         top: 50%;
         left: 50%;
         margin-right: -50%;
-        transform: translate(-50%, -50%) }
-    .result {
-      font-weight: bold;
+        transform: translate(-50%, -50%)
+    }
+
+    .button3{
+        display:inline-block;
+        padding:0.5em 1.8em;
+        margin: 1.5rem 2rem 1.5rem 2rem;
+        border-radius:2em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Roboto',sans-serif;
+        font-size: 45px;
+        color:#474747;
+        background-color:#999999;
+        text-align:center;
+        transition: all 0.2s;
+        width: 70%;
+        border: 2px solid #17f702;
+    }
+    .button3:hover{
+        color: #000000
+        background-color:#dbdbdb;
+    }
+    @media all and (max-width:30em){
+        .button3{
+        display:block;
+        margin:0.2em auto;
+        }
+    }
+
+    .remark{
+      font-size: 30px;
+    }
+
+    .form_input {
+      font-family: 'Roboto', sans-serif;
+      font-size: 45px;
+      color:#474747;
+      padding: 0.4rem 0.8rem 0.4rem 0.8rem;
+      margin:  1rem 1.5rem 1rem 1.5rem;
+      radius: 2em;
       border: 2px solid #17f702;
-      color: red;
-      vertical-align: middle;
-      display: inline-block;
-      width: 600px;
-      padding-top: 20px;
-      padding-bottom: 20px;
+      background-color:#999999;
+      width: 45%;
+      display:inline-block;
+      transition: all 0.3s;
+    }
+     .outer_container{
+          align-items: center;
+          text-align: center;
+          }
 
-      }
-      .c_container{
-              align-items: center;
-              text-align: center;}
-      .remark{
-      font-size: 15px;}
-
+     .form_container{
+     min-height: 350px;
+     }
 </style>
 
 <body>
 <section>
-    <div class="remark"><i>*Чтобы начать дешифровку вы должны ввести код доступа для прогдаммы-дешифровщика, без правильного кода дешифровка незозможна!</i></div>
+    <div class = "outer_container">
+    <div class="remark"><i>*Чтобы начать дешифровку вы должны ввести код доступа для прогдаммы-дешифровщика, без правильного кода дешифровка невозможна!</i></div>
     <hr>
-    <div>Веедите код для старта дешифровки</div>
+
+    <div class="c_container">
+        <div>Веедите код для старта дешифровки</div>
         <form method="post" action="/validate_access_code">
-            <input type="text" name="pass-code">
-            <button type="submit">Начать дешифровку</button>
+            <input type="text" class="form_input" name="pass-code">
+            <button type="submit" class="button3">Начать дешифровку</button>
         </form>
+    </div>
+    </div>
 </section>
 </body>
 </html>
